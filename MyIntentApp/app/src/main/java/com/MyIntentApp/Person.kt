@@ -4,13 +4,17 @@ import android.os.Parcel
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
+
 @Parcelize
 data class Person (
     val name: String ?,
     val age: Int?,
     val email: String?,
     val city: String?
-) : Parcelable {
+) : Parcelable
+
+//sudah memakai anotasi parcelize, jadi kode dibawah tidak perlu
+
 //    constructor(parcel: Parcel) : this(
 //        parcel.readString(),
 //        parcel.readValue(Int::class.java.classLoader) as? Int,
@@ -39,5 +43,5 @@ data class Person (
 //            return arrayOfNulls(size)
 //        }
 //    }
-}
+
 
