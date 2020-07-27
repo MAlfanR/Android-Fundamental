@@ -17,6 +17,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         val btnMoveWithActivityData:Button = findViewById(R.id.btn_activity_data)
         btnMoveWithActivityData.setOnClickListener(this)
+
+        val btnMoveActivityWithObject:Button = findViewById(R.id.btn_move_activity_object)
+        btnMoveActivityWithObject.setOnClickListener(this)
     }
 
     override fun onClick(v: View) {
@@ -31,6 +34,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                moveWithDataIntent.putExtra(MoveWithActivityData.EXTRA_NAME, "M. Alfan")
                moveWithDataIntent.putExtra(MoveWithActivityData.EXTRA_AGE, 20)
                startActivity(moveWithDataIntent)
+           }
+
+           R.id.btn_move_activity_object ->{
+               val orang = Person("M. Alfan", 20, "alfanriyadi25@gmail.com", "Sumsel")
+               val moveWithObjectIntent = Intent(this@MainActivity, MoveWithObjectActivity::class.java)
+               moveWithObjectIntent.putExtra(MoveWithObjectActivity.EXTRA_ORANG, orang)
+               startActivity(moveWithObjectIntent)
            }
        }
     }
